@@ -17,6 +17,7 @@ public class Main{
                 "5. La lista e' vuota?\n" +
                 "6. Popola la lista con i numeri da 1 a n\n" +
                 "7. Popola la lista con i numeri da n a 1\n" +
+                "8. Ordina crescente\n" +
                 "0. Esci");
         System.out.print("Scegli un'opzione: ");
         return scanner.nextLine();
@@ -67,6 +68,9 @@ public class Main{
                     n = scanner.nextInt();
                     scanner.nextLine(); // Consuma il carattere di nuova linea
                     numeri.popolaInverso(n);
+                    break;
+                case "8": 
+                    numeri.ordinaCrescente();
                     break;
                 default:
                     if(!(scelta.equals("0"))){

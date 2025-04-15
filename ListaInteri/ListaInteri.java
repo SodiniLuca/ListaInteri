@@ -1,5 +1,3 @@
-
-
 public class ListaInteri{
     // Attributo
     private Nodo head;
@@ -120,6 +118,32 @@ public class ListaInteri{
                 this.addInCoda(new Nodo(i));
             }
         }
+    }
 
+    /**
+     * ordina in ordine crescente la lista
+     */
+    public void ordinaCrescente() {
+        if (this.head == null || this.head.link == null) {
+            System.out.println("Lista vuota");
+        }
+        else{
+            boolean scambiato;
+            do {
+                scambiato = false;
+                Nodo nodo = this.head;
+                // Scorre la lista e scambia gli elementi se necessario
+                while (nodo != null && nodo.link != null) {
+                    if (nodo.info > nodo.link.info) {
+                        // Scambia i valori
+                        int temp = nodo.info;
+                        nodo.info = nodo.link.info;
+                        nodo.link.info = temp;
+                        scambiato = true;
+                    }
+                    nodo = nodo.link;
+                }
+            } while (scambiato);  // Continua finché vengono fatti scambi
+        }
     }
 }
